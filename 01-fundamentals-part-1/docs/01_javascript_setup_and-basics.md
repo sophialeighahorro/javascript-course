@@ -301,7 +301,11 @@ By the end of Hour 1, your `script.js` should look like this:
 ```
 
 ## 📊 Save Your Progress with Git
+After typing your commit message and pressing `Esc`, press `:wq` and then `Enter` to save and exit the editor. You can then push your changes with:
 
+```bash
+git push origin main
+```
 Time to save your work like a professional developer!
 
 ```bash
