@@ -356,3 +356,5 @@ console.log(`Average: ${average.toFixed(2)}`);
 console.log(`Highest: ${highest}`);
 console.log(`Lowest: ${lowest}`);
 console.log(`Passing students: ${passing} out of ${grades.length}`);
+
+// JavaScript Fundamentals Part 2 - Hour 2
