@@ -298,63 +298,411 @@
 // // Lowest: 67
 // // Passing students: 6 out of 8
 
-const grades = [78, 85, 92, 67, 88, 95, 73, 82];
+// const grades = [78, 85, 92, 67, 88, 95, 73, 82];
 
-// Function to calculate average
-function calculateAverage(grades) {
-  if (grades.length === 0) return 0; // guard for empty array
-  let sum = 0;
-  for (let i = 0; i < grades.length; i++) {
-    sum += grades[i]; // add each grade to sum
-  }
-  return sum / grades.length; // average = sum / number of items
-}
+// // Function to calculate average
+// function calculateAverage(grades) {
+//   if (grades.length === 0) return 0; // guard for empty array
+//   let sum = 0;
+//   for (let i = 0; i < grades.length; i++) {
+//     sum += grades[i]; // add each grade to sum
+//   }
+//   return sum / grades.length; // average = sum / number of items
+// }
 
-// Function to find highest grade
-function findHighestGrade(grades) {
-  if (grades.length === 0) return null;
-  let highest = grades[0];
-  for (let i = 1; i < grades.length; i++) {
-    if (grades[i] > highest) {
-      highest = grades[i]; // update highest when we find a bigger grade
-    }
-  }
-  return highest;
-}
+// // Function to find highest grade
+// function findHighestGrade(grades) {
+//   if (grades.length === 0) return null;
+//   let highest = grades[0];
+//   for (let i = 1; i < grades.length; i++) {
+//     if (grades[i] > highest) {
+//       highest = grades[i]; // update highest when we find a bigger grade
+//     }
+//   }
+//   return highest;
+// }
 
-// Function to find lowest grade
-function findLowestGrade(grades) {
-  if (grades.length === 0) return null;
-  let lowest = grades[0];
-  for (let i = 1; i < grades.length; i++) {
-    if (grades[i] < lowest) {
-      lowest = grades[i]; // update lowest when we find a smaller grade
-    }
-  }
-  return lowest;
-}
+// // Function to find lowest grade
+// function findLowestGrade(grades) {
+//   if (grades.length === 0) return null;
+//   let lowest = grades[0];
+//   for (let i = 1; i < grades.length; i++) {
+//     if (grades[i] < lowest) {
+//       lowest = grades[i]; // update lowest when we find a smaller grade
+//     }
+//   }
+//   return lowest;
+// }
 
-    // Function to count passing students
-function countPassing(grades, passingGrade) {
-  let count = 0;
-  for (let i = 0; i < grades.length; i++) {
-    if (grades[i] >= passingGrade) {
-      count++; // increment if grade is >= passingGrade
-    }
-  }
-  return count;
-}
+//     // Function to count passing students
+// function countPassing(grades, passingGrade) {
+//   let count = 0;
+//   for (let i = 0; i < grades.length; i++) {
+//     if (grades[i] >= passingGrade) {
+//       count++; // increment if grade is >= passingGrade
+//     }
+//   }
+//   return count;
+// }
 
-    // Generate complete report
-const average = calculateAverage(grades);
-const highest = findHighestGrade(grades);
-const lowest = findLowestGrade(grades);
-const passing = countPassing(grades, 70);
+//     // Generate complete report
+// const average = calculateAverage(grades);
+// const highest = findHighestGrade(grades);
+// const lowest = findLowestGrade(grades);
+// const passing = countPassing(grades, 70);
 
-console.log("=== GRADE REPORT ===");
-console.log(`Average: ${average.toFixed(2)}`);
-console.log(`Highest: ${highest}`);
-console.log(`Lowest: ${lowest}`);
-console.log(`Passing students: ${passing} out of ${grades.length}`);
+// console.log("=== GRADE REPORT ===");
+// console.log(`Average: ${average.toFixed(2)}`);
+// console.log(`Highest: ${highest}`);
+// console.log(`Lowest: ${lowest}`);
+// console.log(`Passing students: ${passing} out of ${grades.length}`);
 
 // JavaScript Fundamentals Part 2 - Hour 2
+
+//////////////////
+//Objects & Data Structures
+
+// The Array Problem
+// const jonasArray = ["Jonas","Schmedtmann",2037 - 1991,"teacher",["Michael", "Peter", "Steven"],];
+
+// console.log(jonasArray[0]); // What is this? firstName?
+// console.log(jonasArray[1]); // lastName?
+// console.log(jonasArray[2]); // age?
+
+// //Basic Object Creation
+// // Object literal syntax - curly braces create objects
+// const jonas = {
+//   firstName: "Jonas", // property: string value
+//   lastName: "Schmedtmann", // property: string value
+//   age: 2037 - 1991, // property: calculated value
+//   job: "teacher", // property: string value
+//   friends: ["Michael", "Peter", "Steven"], // property: array value
+// };
+// console.log(jonas);
+
+// //Property Access Methods 
+// // Dot notation - clean and readable
+// console.log(jonas.firstName); // 'Jonas'
+// console.log(jonas.lastName); // 'Schmedtmann'
+// console.log(jonas.age); // 46
+// console.log(jonas.job); // 'teacher'
+// console.log(jonas.friends); // ['Michael', 'Peter', 'Steven']
+
+// // Bracket notation - uses strings
+// console.log(jonas["firstName"]); // Same result as dot notation
+// console.log(jonas["lastName"]);
+// console.log(jonas["age"]);
+
+// // Bracket notation with expressions - compute property names!
+// const nameKey = "Name";
+// console.log(jonas["first" + nameKey]); // 'Jonas'
+// console.log(jonas["last" + nameKey]); // 'Schmedtmann'
+
+// // This is impossible with dot notation
+// // jonas.'first' + nameKey  // ❌ Syntax error!
+
+// ///Property Modification and Addition
+// //Objects are mutable even when declared with const. You can change existing properties and add new ones.
+
+// //Modifying Existing Properties
+// // Both notations work for modification
+// jonas.job = "programmer";
+// jonas["age"] = 35;
+// console.log(jonas);
+
+// // Objects can grow - add properties after creation
+// jonas.location = "Portugal";
+// jonas["twitter"] = "@jonasschmedtman";
+// jonas.hasDriversLicense = true;
+// console.log(jonas);
+
+// //const objects can have properties changed. const only prevents reassigning the entire object variable, not modifying its contents.
+
+// //exercise 1
+
+// // Create your own objects:
+// // 1. Create a 'book' object with title, author, pages, and isRead properties
+// // 2. Create a 'playlist' object with name, creator, songs array, and genre
+// // 3. Access and log different properties using both dot and bracket notation
+// // 4. Add a new property to each object
+// // 5. Modify an existing property in each object
+
+// // Your code here...
+
+// // Example structure:
+// const book = {
+//   title: "Pride and Prejudice",
+//   author: "Jane Austen",
+//   pages: 432,
+//   isRead: true
+// };
+
+// const playlist = {
+//   name: "Exoplanet",
+//   creator: "Iya",
+//   songs: ["Overdose", "Call Me Baby", "First Snow", "Growl"],
+//   songGenre: "K-Pop"
+// };
+
+// // Practice accessing properties
+// console.log(book.title);
+// console.log(playlist["creator"]);
+// console.log(playlist.songs[0]);
+// console.log(book.author);
+
+// // Add new properties
+// book["bookGenre"] = "Classig Regency Novel";
+// playlist["duration"] = "11:32";
+
+// // Modify existing properties
+// book["pages"] = 250;
+// playlist["songs"] = ["Thunder", "Kokobop", "Love Shot", "Tempo"];
+// console.log(book);
+// console.log(playlist);
+
+// ///Objects vs Arrays: When to Use What
+
+// //use arrays for Ordered, indexed data - think lists
+// const listOfYears = [1991, 1984, 2008, 2020];
+// const shoppingList = ["apples", "bananas", "milk", "bread"];
+// const testScores = [85, 92, 78, 96];
+
+// //Use Objects For Named, descriptive data - think entities
+// const person = {
+//   name: "Jonas",
+//   age: 46,
+//   occupation: "teacher",
+// };
+
+// const car = {
+//   brand: "Toyota",
+//   model: "Camry",
+//   year: 2020,
+//   color: "blue",
+// };
+
+// ///Combining Objects and Arrays
+// // Objects can contain arrays, arrays can contain objects
+// const student = {
+//   name: "Sarah",
+//   grades: [85, 92, 78], // Array inside object
+//   address: {
+//     // Object inside object
+//     street: "123 Main St",
+//     city: "New York",
+//   },
+// };
+
+// console.log(student.grades[0]); // 85
+// console.log(student.address.city); // 'New York'
+
+// //Object Methods and the 'this' Keyword
+// //Functions inside objects are called methods.
+// // Methods let objects not just store data, but also perform actions on that data.
+
+// ////////////////////////////////////
+// // Object Methods
+
+// const jonas = {
+//   firstName: "Jonas",
+//   lastName: "Schmedtmann",
+//   birthYear: 1991,
+//   job: "teacher",
+//   friends: ["Michael", "Peter", "Steven"],
+//   hasDriversLicense: true,
+
+//   // Method - function inside object
+//   calcAge: function (birthYear) {
+//     return 2037 - birthYear;
+//   },
+// };
+
+// // Call methods using dot notation
+// console.log(jonas.calcAge(1991)); // 46
+// console.log(jonas.calcAge(jonas.birthYear)); // Same result
+
+// //The 'this' Keyword - Accessing Own Properties
+// const jonasImproved = {
+//   firstName: "Jonas",
+//   lastName: "Schmedtmann",
+//   birthYear: 1991,
+//   job: "teacher",
+//   friends: ["Michael", "Peter", "Steven"],
+//   hasDriversLicense: true,
+
+//   calcAge: function () {
+//     console.log(this); // Shows the jonas object
+//     return 2037 - this.birthYear; // Access own birthYear!
+//   },
+// };
+
+// console.log(jonasImproved.calcAge()); // 46
+// //this refers to the object the method belongs to
+
+// //Advanced: Storing Calculated Values
+
+// const jonasAdvanced = {
+//   firstName: "Jonas",
+//   lastName: "Schmedtmann",
+//   birthYear: 1991,
+//   job: "teacher",
+//   friends: ["Michael", "Peter", "Steven"],
+//   hasDriversLicense: true,
+
+//   calcAge: function () {
+//     this.age = 2037 - this.birthYear; // Store result as new property
+//     return this.age;
+//   },
+
+//   getSummary: function () {
+//     return `${this.firstName} is a ${this.calcAge()}-year old ${
+//       this.job
+//     }, and he has ${this.hasDriversLicense ? "a" : "no"} driver's license.`;
+//   },
+// };
+
+// console.log(jonasAdvanced.calcAge()); // 46
+// console.log(jonasAdvanced.age); // 46 (now stored as property)
+// console.log(jonasAdvanced.getSummary()); // Full description
+
+//EXERCISE 2
+
+// Create a 'calculator' object:
+// 1. Properties: num1, num2, operator
+// 2. Methods: add(), subtract(), multiply(), divide()
+// 3. Method: calculate() that uses the operator to perform the right operation
+// 4. Method: getResult() that returns a formatted string
+// 5. Use 'this' to access the object's own properties
+
+const calculator = {
+  num1: 10,
+  num2: 5,
+  operator: "+",
+
+  add: function () {
+    // Your code here - use this.num1 and this.num2
+    return this.num1 + this.num2;
+  },
+
+  subtract: function () {
+    // Your code here
+    return this.num1 - this.num2;
+  },
+
+  multiply: function () {
+    // Your code here
+    return this.num1 * this.num2;
+  },
+
+  divide: function () {
+    // Your code here
+    return this.num1 / this.num2;
+  },
+
+  calculate: function () {
+    // Use this.operator to determine which method to call
+    // Hint: if (this.operator === '+') return this.add();
+    if (this.operator === "+") return this.add();
+    if (this.operator === "-") return this.subtract();
+    if (this.operator === "*") return this.multiply();
+    if (this.operator === "/") return this.divide();
+    return "invalid operator";
+  },
+
+  getResult: function () {
+    // Return formatted string like "10 + 5 = 15"
+     return `${this.num1} ${this.operator} ${this.num2} = ${this.calculate()}`;
+  },
+};
+
+// Test your calculator
+console.log(calculator.calculate());
+console.log(calculator.getResult());
+
+///Coding Challenge #3: User Profile System
+//Build a user profile system with the following features:
+
+//Create a 'user' object with properties:
+//firstName, lastName, birthYear, location, interests (array)
+//friends (array of objects with name and status)
+//isActive boolean
+
+// Add methods:
+// calcAge(): calculate and store age
+// addFriend(name, status): add a friend to friends array
+// getActiveFriends(): return count of friends with status 'active'
+// getSummary(): return a complete profile summary
+// toggleStatus(): switch isActive between true/false\
+
+//The friends array should contain objects like: {name: 'Michael', status: 'active'}
+
+// Expected behavior:
+// Calculate age automatically
+// Track friend relationships
+// Generate social media style profile summary
+// Manage user's active status
+
+///
+const user = {
+  firstName: "Sophia Leigh",
+  lastName: "Ahorro",
+  birthYear: 2005,
+  location: "Manila",
+  interests: ["gaming", "graphic design", "fashion"],
+  friends: [
+    { name: "Marygail", status: "active" },
+    { name: "Celesse", status: "inactive" },
+    { name: "JB", status: "active" },
+  ],
+  isActive: true,
+
+  // Calculate age method
+  calcAge: function () {
+    const currentYear = new Date().getFullYear();
+    this.age = currentYear - this.birthYear;
+    return this.age;
+  },
+
+  // Add friend method
+  addFriend: function (name, status = "active") {
+    this.friends.push({ name, status });
+    return this.friends.length;
+  },
+
+  // Get active friends count
+  getActiveFriends: function () {
+    // Filter friends array to count only active friends
+    return this.friends.filter(friend => friend.status === "active").length;
+  },
+ 
+  // Toggle active status
+  toggleStatus: function () {
+    this.isActive = !this.isActive;
+    return this.isActive;
+  },
+
+  // Generate profile summary
+  getSummary: function () {
+    this.calcAge();
+      return `
+  Profile Summary
+------------------------
+Name: ${this.firstName} ${this.lastName}
+Age: ${this.age}
+Location: ${this.location}
+Status: ${this.isActive ? "🟢 Active" : "🔴 Inactive"}
+
+Friends: ${this.friends.length} total (${this.getActiveFriends()} active)
+Interests: ${this.interests.join(", ")}
+    `;
+  },
+};
+    
+// Test your user profile system
+console.log(user.getSummary());
+user.addFriend("Alex", "active");
+user.toggleStatus();
+console.log(`\nAfter updates:`);
+console.log(user.getSummary());
+
+//// JavaScript Fundamentals Part 2 - Hour 3
