@@ -574,50 +574,50 @@
 // 4. Method: getResult() that returns a formatted string
 // 5. Use 'this' to access the object's own properties
 
-const calculator = {
-  num1: 10,
-  num2: 5,
-  operator: "+",
+// const calculator = {
+//   num1: 10,
+//   num2: 5,
+//   operator: "+",
 
-  add: function () {
-    // Your code here - use this.num1 and this.num2
-    return this.num1 + this.num2;
-  },
+//   add: function () {
+//     // Your code here - use this.num1 and this.num2
+//     return this.num1 + this.num2;
+//   },
 
-  subtract: function () {
-    // Your code here
-    return this.num1 - this.num2;
-  },
+//   subtract: function () {
+//     // Your code here
+//     return this.num1 - this.num2;
+//   },
 
-  multiply: function () {
-    // Your code here
-    return this.num1 * this.num2;
-  },
+//   multiply: function () {
+//     // Your code here
+//     return this.num1 * this.num2;
+//   },
 
-  divide: function () {
-    // Your code here
-    return this.num1 / this.num2;
-  },
+//   divide: function () {
+//     // Your code here
+//     return this.num1 / this.num2;
+//   },
 
-  calculate: function () {
-    // Use this.operator to determine which method to call
-    // Hint: if (this.operator === '+') return this.add();
-    if (this.operator === "+") return this.add();
-    if (this.operator === "-") return this.subtract();
-    if (this.operator === "*") return this.multiply();
-    if (this.operator === "/") return this.divide();
-    return "invalid operator";
-  },
+//   calculate: function () {
+//     // Use this.operator to determine which method to call
+//     // Hint: if (this.operator === '+') return this.add();
+//     if (this.operator === "+") return this.add();
+//     if (this.operator === "-") return this.subtract();
+//     if (this.operator === "*") return this.multiply();
+//     if (this.operator === "/") return this.divide();
+//     return "invalid operator";
+//   },
 
-  getResult: function () {
-    // Return formatted string like "10 + 5 = 15"
-     return `${this.num1} ${this.operator} ${this.num2} = ${this.calculate()}`;
-  },
-};
+//   getResult: function () {
+//     // Return formatted string like "10 + 5 = 15"
+//      return `${this.num1} ${this.operator} ${this.num2} = ${this.calculate()}`;
+//   },
+// };
 
-// Test your calculator
-console.log(calculator.calculate());
-console.log(calculator.getResult());
+// // Test your calculator
+// console.log(calculator.calculate());
+// console.log(calculator.getResult());
 
 ///Coding Challenge #3: User Profile System
 //Build a user profile system with the following features:
@@ -643,66 +643,440 @@ console.log(calculator.getResult());
 // Manage user's active status
 
 ///
-const user = {
-  firstName: "Sophia Leigh",
-  lastName: "Ahorro",
-  birthYear: 2005,
-  location: "Manila",
-  interests: ["gaming", "graphic design", "fashion"],
-  friends: [
-    { name: "Marygail", status: "active" },
-    { name: "Celesse", status: "inactive" },
-    { name: "JB", status: "active" },
-  ],
-  isActive: true,
+// const user = {
+//   firstName: "Sophia Leigh",
+//   lastName: "Ahorro",
+//   birthYear: 2005,
+//   location: "Manila",
+//   interests: ["gaming", "graphic design", "fashion"],
+//   friends: [
+//     { name: "Marygail", status: "active" },
+//     { name: "Celesse", status: "inactive" },
+//     { name: "JB", status: "active" },
+//   ],
+//   isActive: true,
 
-  // Calculate age method
-  calcAge: function () {
-    const currentYear = new Date().getFullYear();
-    this.age = currentYear - this.birthYear;
-    return this.age;
-  },
+//   // Calculate age method
+//   calcAge: function () {
+//     const currentYear = new Date().getFullYear();
+//     this.age = currentYear - this.birthYear;
+//     return this.age;
+//   },
 
-  // Add friend method
-  addFriend: function (name, status = "active") {
-    this.friends.push({ name, status });
-    return this.friends.length;
-  },
+//   // Add friend method
+//   addFriend: function (name, status = "active") {
+//     this.friends.push({ name, status });
+//     return this.friends.length;
+//   },
 
-  // Get active friends count
-  getActiveFriends: function () {
-    // Filter friends array to count only active friends
-    return this.friends.filter(friend => friend.status === "active").length;
-  },
+//   // Get active friends count
+//   getActiveFriends: function () {
+//     // Filter friends array to count only active friends
+//     return this.friends.filter(friend => friend.status === "active").length;
+//   },
  
-  // Toggle active status
-  toggleStatus: function () {
-    this.isActive = !this.isActive;
-    return this.isActive;
-  },
+//   // Toggle active status
+//   toggleStatus: function () {
+//     this.isActive = !this.isActive;
+//     return this.isActive;
+//   },
 
-  // Generate profile summary
-  getSummary: function () {
-    this.calcAge();
-      return `
-  Profile Summary
-------------------------
-Name: ${this.firstName} ${this.lastName}
-Age: ${this.age}
-Location: ${this.location}
-Status: ${this.isActive ? "🟢 Active" : "🔴 Inactive"}
+//   // Generate profile summary
+//   getSummary: function () {
+//     this.calcAge();
+//       return `
+//   Profile Summary
+// ------------------------
+// Name: ${this.firstName} ${this.lastName}
+// Age: ${this.age}
+// Location: ${this.location}
+// Status: ${this.isActive ? "🟢 Active" : "🔴 Inactive"}
 
-Friends: ${this.friends.length} total (${this.getActiveFriends()} active)
-Interests: ${this.interests.join(", ")}
-    `;
-  },
-};
+// Friends: ${this.friends.length} total (${this.getActiveFriends()} active)
+// Interests: ${this.interests.join(", ")}
+//     `;
+//   },
+// };
     
-// Test your user profile system
-console.log(user.getSummary());
-user.addFriend("Alex", "active");
-user.toggleStatus();
-console.log(`\nAfter updates:`);
-console.log(user.getSummary());
+// // Test your user profile system
+// console.log(user.getSummary());
+// user.addFriend("Alex", "active");
+// user.toggleStatus();
+// console.log(`\nAfter updates:`);
+// console.log(user.getSummary());
 
-//// JavaScript Fundamentals Part 2 - Hour 3
+// //// JavaScript Fundamentals Part 2 - Hour 3
+
+
+//////////
+//DOM manipulation and interactivity
+
+// DOM = Document Object Model - JavaScript's interface to HTML
+// Every HTML element becomes a JavaScript object
+// Real-time updates - changes happen instantly in the browser
+
+////////////////////////////////////
+// Selecting DOM Elements
+
+// querySelector - works with any CSS selector
+// const message = document.querySelector(".message"); // Select by class
+// const button = document.querySelector("#btn"); // Select by ID
+// const heading = document.querySelector("h1"); // Select by tag
+// const input = document.querySelector(".guess"); // Select by class
+
+// console.log(message);
+// console.log(button);
+// console.log(heading);
+
+// // Different selector types
+// document.querySelector(".className"); // Class selector
+// document.querySelector("#idName"); // ID selector
+// document.querySelector("tagName"); // Tag selector
+// document.querySelector('[type="text"]'); // Attribute selector
+// document.querySelector("div p"); // Descendant selector
+
+// // getElementById - only works with IDs
+// const buttonById = document.getElementById("btn");
+// console.log(buttonById);
+// console.log(buttonById === button); // Same element, different method
+
+// // querySelectorAll - gets ALL matching elements
+// const allParagraphs = document.querySelectorAll("p");
+// console.log(allParagraphs); // NodeList (like an array)
+// console.log(allParagraphs[0]); // First paragraph
+// console.log(allParagraphs.length); // Number of paragraphs
+
+//Exercise 1: Element Selection Practice
+
+// Practice selecting elements:
+// 1. Select the element with class 'guess' and log it
+// 2. Select the element with ID 'btn' using both querySelector and getElementById
+// 3. Select all span elements and log the collection
+// 4. Select the first span element and log its textContent
+// 5. Experiment with different CSS selectors
+
+// Your code here...
+// const guessInput = document.querySelector(".guess");
+// console.log("Guess input:", guessInput);
+
+// // Method 1: querySelector
+// const buttonQuery = document.querySelector("#btn");
+// console.log("Button via querySelector:", buttonQuery);
+
+
+// // Method 2: getElementById
+// const buttonById = document.getElementById("btn");
+// console.log("Button via getElementById:", buttonById);
+// console.log(buttonQuery === buttonById); // Should be true
+
+// // Select all spans
+// const allSpans = document.querySelectorAll("span");
+// console.log(allSpans);
+
+// // Select first span
+// const firstSpan = document.querySelector("span");
+// console.log("First span text:", firstSpan ? firstSpan.textContent : "No span found");
+
+// // Experiment with different selectors
+// console.log("All inputs:", document.querySelectorAll("input"));           
+// console.log("Button inside body:", document.querySelector("body #btn")); 
+// console.log("Direct child span of div:", document.querySelector("div > span")); 
+
+// ////////////////////////////////////
+// // Modifying Element Content
+
+// const message = document.querySelector(".message");
+
+// // textContent - gets/sets just the text, no HTML
+// console.log(message.textContent); // "Start interacting!"
+// message.textContent = "Hello from JavaScript!";
+
+// // innerHTML - includes HTML tags (more powerful but be careful)
+// message.innerHTML = "<strong>Bold text from JS!</strong>";
+
+// // innerText - respects styling (what user actually sees)
+// console.log(message.innerText);
+
+// // textContent	Plain text only	Ignored/escaped
+// // innerHTML	HTML content	Processed as HTML
+// // innerText	Visible text only	Ignored, respects CSS
+
+// // Input elements use .value property, not textContent
+// const input = document.querySelector(".guess");
+
+// console.log(input.value); // Current input value
+// input.value = "Default text"; // Set input value
+// input.placeholder = "Type here"; // Change placeholder
+
+// //Important: Form elements (input, textarea, select) use the .value property instead of .textContent.
+
+// // Changing element styles with the style property
+// const heading = document.querySelector("h1");
+
+// heading.style.color = "red";
+// heading.style.backgroundColor = "yellow"; // Note: camelCase!
+// heading.style.fontSize = "3rem";
+// heading.style.padding = "20px";
+// heading.style.borderRadius = "10px";
+// //Rule: Multi-word CSS properties become camelCase in JavaScript.
+
+// //EXERCISE 2  
+
+// // Practice content and style manipulation:
+// // 1. Change the h1 text to your name
+// // 2. Make the button's background color blue and text white
+// // 3. Set a placeholder text in the input field
+// // 4. Change the message text to include HTML bold formatting
+// // 5. Make the score display larger and a different color
+
+// // Your code here...
+// const heading = document.querySelector("h1");
+// const button = document.querySelector("#btn");
+// const input = document.querySelector(".guess");
+// const message = document.querySelector(".message");
+// const scoreValue = document.querySelector(".score-value");
+
+// // 1. Change h1 text
+// heading.textContent = "Sophia Leigh";
+
+// // 2. Style the button
+// button.textContent = "Click here";
+// button.style.backgroundColor = "blue";
+// button.style.color = "white";
+// button.style.padding = "10px 20px";
+// button.style.border = "none";
+// button.style.borderRadius = "5px";
+
+// // 3. Set placeholder
+// input.placeholder = "Enter your guess...";
+
+// // 4. HTML formatting in message
+// message.innerHTML = "Welcome! <strong>Good luck</strong> with the game.";
+
+// // 5. Style the score
+// scoreValue.textContent = "10";
+// scoreValue.style.fontSize = "2rem";
+// scoreValue.style.color = "green";
+// scoreValue.style.fontWeight = "bold";
+
+// ///
+// // Event Listeners - User Interaction
+
+// const button = document.querySelector("#btn");
+// const message = document.querySelector(".message");
+
+// // addEventListener - the modern way to handle events
+// button.addEventListener("click", function () {
+//   console.log("Button was clicked!");
+//   message.textContent = "You clicked the button!";
+//   message.style.color = "green";
+// });
+
+// element.addEventListener("eventType", function () {
+//   // Code to run when event happens
+// });
+
+// // Event listener with state management
+// let clickCount = 0;
+
+// button.addEventListener("click", function () {
+//   clickCount++;
+//   button.textContent = `Clicked ${clickCount} times`;
+//   button.style.backgroundColor = `hsl(${clickCount * 30}, 70%, 50%)`;
+// });
+
+// // Input events fire every time user types
+// const input = document.querySelector(".guess");
+
+// input.addEventListener("input", function () {
+//   const userText = input.value;
+//   message.textContent = `You typed: ${userText}`;
+//   message.style.fontSize = `${userText.length + 10}px`;
+// });
+
+// // 'input' - Fires on every character change
+// // 'change' - Fires when input loses focus
+// // 'focus' - Fires when input is clicked/selected
+// // 'blur' - Fires when input loses focus
+
+// // Keyboard events - responding to specific keys
+// input.addEventListener("keydown", function (event) {
+//   console.log(`Key pressed: ${event.key}`);
+
+//   if (event.key === "Enter") {
+//     message.textContent = `You pressed Enter! Text was: ${input.value}`;
+//     input.value = ""; // Clear input
+//   }
+// });
+
+// // Global keyboard events
+// document.addEventListener("keydown", function (event) {
+//   if (event.key === "Escape") {
+//     // Reset everything
+//     message.textContent = "Reset with Escape key!";
+//     input.value = "";
+//     clickCount = 0;
+//     button.textContent = "Click Me!";
+//   }
+// });
+
+// // event.key - Which key was pressed
+// // event.target - Which element triggered the event
+// // event.type - What type of event occurred
+
+// // 'click'	Mouse click	Buttons, links, clickable elements
+// // 'input'	Text input changes	Real-time text processing
+// // 'keydown'	Key is pressed down	Keyboard shortcuts
+// // 'mouseover'	Mouse enters element	Hover effects
+// // 'submit'	Form is submitted	Form handling
+
+// //Exercise 3: Event Listener Practice
+
+// // Practice event listeners:
+// // 1. Add a click event to the h1 that changes its color
+// // 2. Create an input event that displays character count as user types
+// // 3. Add a keydown event that responds to the spacebar
+// // 4. Make the button change its text when hovered (mouseover event)
+// // 5. Create a double-click event that does something special
+
+// // Your code here...
+// const heading = document.querySelector("h1");
+// const input = document.querySelector(".guess");
+// const button = document.querySelector("#btn");
+// const message = document.querySelector(".message");
+
+// // 1. Click event on h1
+// heading.addEventListener("click", function () {
+//   heading.style.color = "pink";
+// });
+
+// // 2. Character count display
+// input.addEventListener("input", function () {
+//   const count = input.value.length;
+//   message.textContent = `Character count: ${count}`;
+// });
+
+// // 3. Spacebar response
+// document.addEventListener("keydown", function (event) {
+//   if (event.key === " ") {
+//     message.textContent = "Spacebar pressed!";
+//   }
+// });
+
+// // 4. Hover effect
+// button.addEventListener("mouseover", function () {
+//   button.textContent = "Hovering!";
+// });
+
+// button.addEventListener("mouseout", function () {
+//   button.textContent = "Click Me!";
+// });
+
+// // 5. Double-click event
+// heading.addEventListener("dblclick", function () {
+//   heading.textContent = "Double-clicked!";
+//   heading.style.backgroundColor = "purple";
+// });
+
+///////
+//Final Project: Interactive Score Tracker
+
+// === Score Tracker ===
+
+// Select elements
+const score1El = document.getElementById("score-1");
+const score2El = document.getElementById("score-2");
+const addButtons = document.querySelectorAll(".btn-add");
+const resetBtn = document.getElementById("btn-reset");
+const winningScoreInput = document.getElementById("winning-score");
+const targetSpan = document.querySelector(".target");
+const statusEl = document.querySelector(".status");
+const winnerEl = document.querySelector(".winner");
+const winnerNameEl = document.querySelector(".winner-name");
+
+// State
+let scores = [0, 0]; // [player1, player2]
+let winningScore = parseInt(winningScoreInput.value);
+let gameOver = false;
+
+// Helper: update UI scores
+function updateScores() {
+  score1El.textContent = scores[0];
+  score2El.textContent = scores[1];
+}
+
+// Helper: check winner
+function checkWinner() {
+  if (scores[0] >= winningScore) {
+    declareWinner(1);
+  } else if (scores[1] >= winningScore) {
+    declareWinner(2);
+  }
+}
+
+// Declare winner
+function declareWinner(player) {
+  gameOver = true;
+  winnerNameEl.textContent = `Player ${player}`;
+  winnerEl.classList.remove("hidden");
+  statusEl.textContent = "Game Over!";
+  document.querySelector(`.player-${player}`).classList.add("winner-style");
+  document.body.style.backgroundColor = "#d4f5d4"; // light green celebration
+}
+
+// Reset game
+function resetGame() {
+  scores = [0, 0];
+  gameOver = false;
+  updateScores();
+  statusEl.innerHTML = `First to <span class="target">${winningScore}</span> wins!`;
+  winnerEl.classList.add("hidden");
+  document.querySelectorAll(".player").forEach(p => p.classList.remove("winner-style"));
+  document.body.style.backgroundColor = "";
+}
+
+// === Event Listeners ===
+
+// Add point buttons
+addButtons.forEach(btn => {
+  btn.addEventListener("click", () => {
+    if (!gameOver) {
+      const player = parseInt(btn.dataset.player);
+      scores[player - 1]++;
+      updateScores();
+      checkWinner();
+    }
+  });
+});
+
+// Reset button
+resetBtn.addEventListener("click", resetGame);
+
+// Winning score input
+winningScoreInput.addEventListener("change", () => {
+  winningScore = parseInt(winningScoreInput.value);
+  targetSpan.textContent = winningScore;
+  resetGame();
+});
+
+// Keyboard shortcuts: 1 = Player1, 2 = Player2, R = Reset
+document.addEventListener("keydown", (e) => {
+  if (e.key.toLowerCase() === "r") {
+    resetGame();
+    return;
+  }
+
+  if (gameOver) return;
+
+  if (e.key === "1") {
+    scores[0]++;
+    updateScores();
+    checkWinner();
+  } else if (e.key === "2") {
+    scores[1]++;
+    updateScores();
+    checkWinner();
+  }
+});
+
+// JavaScript Fundamentals Part 2 - Hour 4
