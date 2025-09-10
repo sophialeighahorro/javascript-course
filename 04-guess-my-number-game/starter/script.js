@@ -43,6 +43,20 @@ document.querySelector('.check').addEventListener('click', function () {
     console.log(`Player guessed:`, guess);
  
     // basic game logic which checks if guess is correct
+
+    //check if guess input is empty
+
+    if (guess < 1 || guess > 20) {
+        document.querySelector(`.message`).textContent = "Number must be between 1 and 20."
+        return;
+    }
+
+        if (!guess) {
+        document.querySelector(`.message`).textContent = "Please enter a number."
+        return;
+    }
+
+
     if (guess === secretNumber) {
         console.log(`Your guess is correct!`);
         document.querySelector(`.message`).textContent = `🎉 Correct Number!`;
@@ -59,6 +73,9 @@ document.querySelector('.check').addEventListener('click', function () {
         document.querySelector(`.message`).textContent = ` 🎉 You won!`;
         document.querySelector(`.guess`).disabled = true;
         document.querySelector(`.check`).disabled = true;
+        
+        document.body.style.backgroundColor = `#a4c762`
+
     } else if (guess > secretNumber) {
         console.log(`Too high!`);
         document.querySelector(`.message`).textContent = `📈 Too high!`;
@@ -69,6 +86,9 @@ document.querySelector('.check').addEventListener('click', function () {
             document.querySelector(`.number`).textContent = secretNumber;
             document.querySelector(`.guess`).disabled = true;
             document.querySelector(`.check`).disabled = true;
+            document.querySelector(`.message`).textContent = `Game Over!`;
+            document.querySelector(`.guess`).value = ``;
+            
         }
     } else if (guess < secretNumber) {
         console.log(`Too low!`);
@@ -79,6 +99,10 @@ document.querySelector('.check').addEventListener('click', function () {
             document.querySelector(`.number`).textContent = secretNumber;
             document.querySelector(`.guess`).disabled = true;
             document.querySelector(`.check`).disabled = true;
+
+            document.body.style.backgroundColor = `#f19fa9`
+
+
         }
     }
 
