@@ -66,3 +66,97 @@ This foundation is crucial for understanding JavaScript's behavior!
 // };
 
 // const addArrow = (a, b) => a + b;
+
+
+console.log('=== `this` KEYWORD & ARROW FUNCTIONS ===');
+
+////////// Understanding the `this` Keyword
+// const person = {
+//   name: 'Jonas',
+//   greet: function () {
+//     console.log(`Hello, I am ${this.name}`);
+//   },
+// };
+
+// person.greet();
+
+// // Method borrowing
+// const anotherPerson = {
+//   name: 'Sarah',
+// };
+
+// // Borrow greet function
+// anotherPerson.greetAnotherPerson = person.greet;
+// // Dosplay or run the greet function for anotherPerson
+// anotherPerson.greetAnotherPerson();
+
+// // Detached function
+// const greetFunction = person.greet;
+// greetFunction();
+
+////////// Arrow Functions vs Regular Functions
+// const obj = {
+//   name: 'Object',
+//   regularMethod: function () {
+//     console.log(`Regular: ${this.name}`);
+//   },
+
+//   arrowMethod: () => {
+//     console.log(`Arrow: ${this.name}`);
+//   },
+// };
+
+// obj.regularMethod();
+// obj.arrowMethod();
+
+// const timer = {
+//   name: 'Timer',
+//   start: function () {
+//     console.log(`${this.name} starting...`);
+
+//     // to call the property name we need to create this self pattern
+//     // so that js can access it easily
+//     const self = this;
+
+//     setTimeout(function () {
+//       console.log(`${self.name} finished`);
+//     }, 1000);
+//   },
+
+//   // In modern approch you just need a parent function to have a arrow function in it
+//   // so that we can call the property without creating self pattern
+
+//   startModern: function () {
+//     console.log(`${this.name} starting modern...`);
+
+//     setTimeout(() => {
+//       console.log(`${this.name} finished modern...`);
+//     }, 1500);
+//   },
+// };
+
+// timer.start();
+// timer.startModern();
+
+////////// The `arguments` Keyword & Advanced Scenarios
+
+// const functionTypes = {
+//   regularFunction: function () {
+//     console.log(`Arguments length: ${arguments.length}`);
+//     console.log(`First argument: ${arguments[0]}`);
+//   },
+
+//   arrowFunction: () => {
+//     console.log(arguments);
+//     console.log(`Arrow function called`);
+//   },
+
+//   modernFunction: (...args) => {
+//     console.log(`Args length ${args.length}`);
+//     console.log(`First arg: ${args[0]}`);
+//   },
+// };
+
+// functionTypes.regularFunction('hello', 'nga');
+// // functionTypes.arrowFunction('test');
+// functionTypes.modernFunction('modern', 'approach')
