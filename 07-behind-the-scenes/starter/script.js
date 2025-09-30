@@ -160,3 +160,69 @@ console.log('=== `this` KEYWORD & ARROW FUNCTIONS ===');
 // functionTypes.regularFunction('hello', 'nga');
 // // functionTypes.arrowFunction('test');
 // functionTypes.modernFunction('modern', 'approach')
+
+console.log('=== PRIMITIVES vs OBJECTS, COPYING & STRICT MODE ===');
+// // primitives in stack
+// // primitive are copied by value
+// let age = 30;
+// // independent copy
+// let oldAge = age;
+
+// age = 31;
+// console.log(`age : ${age}`);
+// console.log(`old age: ${oldAge}`);
+
+// // heap
+// // objects are copied by reference or shared data
+// const me = {
+//   name: 'JB',
+//   age: '20',
+// };
+
+// const friend = me;
+
+// friend.name = 'John Doe';
+// friend.age = 19;
+
+// console.log(me);
+// console.log(friend);
+
+// Shallow vs Deep Copying
+
+// Shallow Copy
+
+// though we can name, age are easy to be independent but nested objects, variables, properties
+const original = {
+  name: 'Alice',
+  hobbies: ['reading', 'coding'],
+};
+
+const shallowCopy = { ...original };
+
+shallowCopy.name = 'Bob';
+console.log('original name: ', original);
+console.log('copy name: ', shallowCopy);
+
+shallowCopy.hobbies.push('gaming');
+
+console.log(original.hobbies);
+console.log(shallowCopy.hobbies);
+
+// Deep Copy
+
+const deepOriginal = {
+  name: 'jb',
+  age: 20,
+  // nested objects
+  address: { city: 'rizal', country: 'ph' },
+  // nested array
+  hobbies: ['playing', 'eating'],
+};
+
+const deepCopy = structuredClone(deepOriginal);
+deepCopy.address.city = 'Manila';
+deepCopy.hobbies.push('cooking');
+deepCopy.name = 'Joseph';
+
+console.log(deepOriginal);
+console.log(deepCopy);
