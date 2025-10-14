@@ -99,8 +99,7 @@ console.log('Cycling workout:', cycling1);
 console.log('Cycling speed:', cycling1.speed.toFixed(1), 'km/h');
 console.log('Cycling description:', cycling1.description);
 
-// Test inheritance - both have click method from Workout
-run1.click();
+// Create a cycling workout
 cycling1.click();
 console.log('Run clicks:', run1.clicks);
 console.log('Cycling clicks:', cycling1.clicks);
